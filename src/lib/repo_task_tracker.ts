@@ -57,8 +57,7 @@ export class RepoTaskTracker extends TaskTracker {
     const relative = task.getPathInProject();
     return `# ${task.title}
 
-  - PROJECT: ${task.project}
-  - FILE-LOCATION: ${relative}:${task.file_location.row}:${task.file_location.col}
+  - FILE_LOCATION: ${relative}:${task.file_location.row}:${task.file_location.col}
   - STATUS: ${TASK_STATUS.OPEN}
 
 ${task.description} `;
