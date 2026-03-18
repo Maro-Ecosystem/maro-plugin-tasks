@@ -1,4 +1,4 @@
-import { Action, ActionRegistry, loading, MrCreateEvent } from "@maro/maro";
+import { Action, ActionRegistry, loading, MrCreateEvent, RepoEvent } from "@maro/maro";
 
 import { TaskTracker } from "./tracker";
 import { getTasksFromDir } from "./utils";
@@ -15,7 +15,7 @@ export class CreateMissingTasksAction implements Action {
   }
 
   @loading("Generating missing issues")
-  async execute(event: MrCreateEvent) {
+  async execute(event: RepoEvent) {
     const repo = event.ctx;
     const tasks = getTasksFromDir(repo.dir);
 
